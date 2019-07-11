@@ -93,7 +93,7 @@
 };
 
 &clock_cpucc {
-	compatible = "qcom,clk-cpu-osm-v2";
+	compatible = "qcom,clk-cpu-osm-sdm845";
 };
 
 &pcie1 {
