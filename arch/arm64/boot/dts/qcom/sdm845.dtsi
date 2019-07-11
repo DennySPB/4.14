@@ -524,7 +524,7 @@
 
 		removed_region1: removed_region1@85fc0000 {
 			no-map;
-			reg = <0 0x85fc0000 0 0x4b40000>; /* enlarge TA memory size from 34M to 62M on 2018/09/03 */
+			reg = <0 0x85fc0000 0 0x40000>;
 		};
 
 		smem_region: smem@86000000 {
