@@ -6,6 +6,11 @@ obj-y += sde/
 obj-$(CONFIG_MSM_NPU) += npu/
 obj-$(CONFIG_MSM_NPU_V2) += npu_v2/
 obj-$(CONFIG_MSM_VIDC_V4L2) += vidc/
+ifeq ($(CONFIG_SPECTRA2_CAMERA), y)
+obj-$(CONFIG_SPECTRA_CAMERA) += camera_v3/
+else ifeq ($(CONFIG_ONEPLUS_DIR_CAMERA),y)
+obj-$(CONFIG_SPECTRA_CAMERA) += camera_oneplus/
+else
 obj-$(CONFIG_SPECTRA_CAMERA) += camera/
 obj-$(CONFIG_MSM_AIS) += ais/
 obj-$(CONFIG_TSPP) += broadcast/
