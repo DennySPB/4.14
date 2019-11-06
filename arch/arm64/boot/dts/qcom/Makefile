@@ -1,77 +1,150 @@
-# SPDX-License-Identifier: GPL-2.0
-dtb-$(CONFIG_ARCH_QCOM)	+= apq8016-sbc.dtb
-dtb-$(CONFIG_ARCH_QCOM)	+= apq8096-db820c.dtb
-dtb-$(CONFIG_ARCH_QCOM)	+= ipq8074-hk01.dtb
-dtb-$(CONFIG_ARCH_QCOM)	+= msm8916-mtp.dtb
-dtb-$(CONFIG_ARCH_QCOM)	+= msm8992-bullhead-rev-101.dtb
-dtb-$(CONFIG_ARCH_QCOM)	+= msm8994-angler-rev-101.dtb
-dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-mtp.dtb
-
-dtb-$(CONFIG_ARCH_QCS403) += qcs403-iot-sku1.dtb \
-			qcs403-iot-sku3.dtb \
-			qcs403-iot-sku5.dtb \
-			qcs401-iot-sku5.dtb \
-			qcs404-iot-sku3.dtb \
-			qcs404-iot-sku5.dtb \
-			qcs404-iot-sku6.dtb
-
-dtb-$(CONFIG_ARCH_QCS405) += qcs405-iot-sku1.dtb \
-		qcs407-iot-sku1.dtb \
-		qcs405-iot-sku3.dtb \
-		qcs407-iot-sku3.dtb \
-		qcs405-iot-sku4.dtb \
-		qcs407-iot-sku4.dtb \
-		qcs405-iot-sku6.dtb \
-		qcs407-iot-sku6.dtb \
-		qcs407-iot-sku9.dtb \
-		qcs405-iot-sku12.dtb \
-		qcs407-iot-sku12.dtb \
-		qcs405-iot-sku13.dtb \
-		qcs407-iot-sku13.dtb
+# dtb-$(CONFIG_ARCH_QCOM)	+= apq8016-sbc.dtb msm8916-mtp.dtb
+# dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-mtp.dtb
+# dtb-$(CONFIG_ARCH_QCOM)	+= apq8096-db820c.dtb
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
-	dtbo-$(CONFIG_ARCH_SM8150) += \
-		sm8150-cdp-overlay.dtbo \
-		sm8150-mtp-overlay.dtbo \
-		sm8150-rumi-overlay.dtbo \
-		sm8150-qrd-overlay.dtbo \
-		sm8150-qrd-dvt-overlay.dtbo \
-		sa8155-adp-star-overlay.dtbo \
-		sa8155p-adp-star-overlay.dtbo \
-		sa8155-v2-adp-air-overlay.dtbo \
-                sa8155p-v2-adp-air-overlay.dtbo \
-		sa8155-adp-alcor-overlay.dtbo \
-		sa8155p-adp-alcor-overlay.dtbo \
-		sm8150-sdx50m-cdp-overlay.dtbo \
-		sm8150-sdx50m-mtp-overlay.dtbo \
-		sm8150-sdx50m-mtp-2.5k-panel-overlay.dtbo \
-		sm8150-sdx50m-qrd-overlay.dtbo \
-		sm8150-sdxprairie-cdp-overlay.dtbo \
-		sm8150-sdxprairie-mtp-overlay.dtbo \
-		sm8150-sdxprairie-v2-cdp-overlay.dtbo \
-		sm8150-sdxprairie-v2-mtp-overlay.dtbo \
-		sm8150-hdk-overlay.dtbo
+	dtbo-$(CONFIG_ARCH_SDM845) += \
+		sdm845-mtp-overlay.dtbo \
+		sdm845-v2-mtp-overlay.dtbo \
+		sdm845-v2.1-mtp-overlay.dtbo \
+		enchilada-evb-v2.1-overlay.dtbo \
+		enchilada-t0-v2.1-overlay.dtbo \
+		enchilada-evt1-v2.1-overlay.dtbo \
+		enchilada-evt2-v2.1-overlay.dtbo \
+		enchilada-evt2-cxo-v2.1-overlay.dtbo \
+		enchilada-dvt-v2.1-overlay.dtbo \
+		enchilada-dvt-v2.1-backup-overlay.dtbo \
+		enchilada-dvt-v2.1-usb30-overlay.dtbo \
+		enchilada-pvt-v2.1-overlay.dtbo \
+		enchilada-pvt-v2.1-backup-overlay.dtbo \
+		enchilada-mp-v2.1-overlay.dtbo \
+		fajita-evb-v2.1-overlay.dtbo \
+		fajita-t0-v2.1-overlay.dtbo \
+		fajita-evt1-v2.1-overlay.dtbo \
+		fajita-dvt-v2.1-overlay.dtbo \
+		fajita-dvt-v2.1-bu-overlay.dtbo \
+		fajita-pvt-v2.1-overlay.dtbo \
+		fajita-pvt-v2.1-bu-overlay.dtbo \
+		fajita-pvt-v2.1-v1-overlay.dtbo \
+		fajita-pvt-v2.1-spec-overlay.dtbo \
+		fajita-mp-v2.1-spec-overlay.dtbo
 
-sm8150-cdp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-mtp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-rumi-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-qrd-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-hdk-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-qrd-dvt-overlay.dtbo-base := sm8150-v2.dtb sm8150p-v2.dtb
-sa8155-adp-star-overlay.dtbo-base := sa8155.dtb sa8155-v2.dtb
-sa8155p-adp-star-overlay.dtbo-base := sa8155p.dtb sa8155p-v2.dtb
-sa8155-v2-adp-air-overlay.dtbo-base := sa8155.dtb sa8155-v2.dtb
-sa8155p-v2-adp-air-overlay.dtbo-base := sa8155p.dtb sa8155p-v2.dtb
-sa8155-adp-alcor-overlay.dtbo-base := sa8155.dtb sa8155-v2.dtb
-sa8155p-adp-alcor-overlay.dtbo-base := sa8155p.dtb sa8155p-v2.dtb
-sm8150-sdx50m-cdp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdx50m-mtp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdx50m-mtp-2.5k-panel-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdx50m-qrd-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdxprairie-cdp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdxprairie-mtp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdxprairie-v2-cdp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
-sm8150-sdxprairie-v2-mtp-overlay.dtbo-base := sm8150.dtb sm8150-v2.dtb sm8150p.dtb sm8150p-v2.dtb
+sdm845-mtp-overlay.dtbo-base := sdm845.dtb
+sdm845-v2-mtp-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2.1-mtp-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-evb-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-t0-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-evt1-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-evt2-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-evt2-cxo-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-dvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-dvt-v2.1-backup-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-dvt-v2.1-usb30-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-pvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-pvt-v2.1-backup-overlay.dtbo-base := sdm845-v2.1.dtb
+enchilada-mp-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-evb-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-t0-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-evt1-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-dvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-dvt-v2.1-bu-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-bu-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-v1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-spec-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-mp-v2.1-spec-overlay.dtbo-base := sdm845-v2.1.dtb
+else ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),n)
+	dtbo-$(CONFIG_ARCH_SDM845) += \
+		sdm845-cdp-overlay.dtbo \
+		sdm845-mtp-overlay.dtbo \
+		sdm845-qrd-overlay.dtbo \
+		sdm845-4k-panel-mtp-overlay.dtbo \
+		sdm845-4k-panel-cdp-overlay.dtbo \
+		sdm845-4k-panel-qrd-overlay.dtbo \
+		sdm845-v2-qvr-evt-overlay.dtbo \
+		sdm845-v2-qvr-dvt-overlay.dtbo \
+		sdm845-v2-cdp-overlay.dtbo \
+		sdm845-v2-mtp-overlay.dtbo \
+		sdm845-v2-qrd-overlay.dtbo \
+		sdm845-v2-4k-panel-mtp-overlay.dtbo \
+		sdm845-v2-4k-panel-cdp-overlay.dtbo \
+		sdm845-v2-4k-panel-qrd-overlay.dtbo \
+		sdm845-v2.1-cdp-overlay.dtbo \
+		sdm845-v2.1-mtp-overlay.dtbo \
+		sdm845-v2.1-qrd-overlay.dtbo \
+		sdm845-v2.1-4k-panel-mtp-overlay.dtbo \
+		sdm845-v2.1-4k-panel-cdp-overlay.dtbo \
+		sdm845-v2.1-4k-panel-qrd-overlay.dtbo \
+		sda845-cdp-overlay.dtbo \
+		sda845-mtp-overlay.dtbo \
+		sda845-qrd-overlay.dtbo \
+		sda845-4k-panel-mtp-overlay.dtbo \
+		sda845-4k-panel-cdp-overlay.dtbo \
+		sda845-4k-panel-qrd-overlay.dtbo \
+		sda845-v2-cdp-overlay.dtbo \
+		sda845-v2-mtp-overlay.dtbo \
+		sda845-v2-qrd-overlay.dtbo \
+		sda845-v2-hdk-overlay.dtbo \
+		sda845-v2-svr-overlay.dtbo \
+		sda845-v2-4k-panel-mtp-overlay.dtbo \
+		sda845-v2-4k-panel-cdp-overlay.dtbo \
+		sda845-v2-4k-panel-qrd-overlay.dtbo \
+		sda845-v2.1-cdp-overlay.dtbo \
+		sda845-v2.1-mtp-overlay.dtbo \
+		sda845-v2.1-qrd-overlay.dtbo \
+		sda845-v2.1-svr-overlay.dtbo \
+		sda845-v2.1-4k-panel-cdp-overlay.dtbo \
+		sda845-v2.1-4k-panel-mtp-overlay.dtbo \
+		sda845-v2.1-4k-panel-qrd-overlay.dtbo \
+		sda845-v2.1-cdp-sdxpoorwills-overlay.dtbo \
+		sda845-v2.1-mtp-sdxpoorwills-overlay.dtbo \
+		sda845-v2-mtp-sdxpoorwills-overlay.dtbo
+
+sdm845-cdp-overlay.dtbo-base := sdm845.dtb
+sdm845-mtp-overlay.dtbo-base := sdm845.dtb
+sdm845-qrd-overlay.dtbo-base := sdm845.dtb
+sdm845-4k-panel-mtp-overlay.dtbo-base := sdm845.dtb
+sdm845-4k-panel-cdp-overlay.dtbo-base := sdm845.dtb
+sdm845-4k-panel-qrd-overlay.dtbo-base := sdm845.dtb
+sdm845-v2-qvr-evt-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-qvr-dvt-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-cdp-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-mtp-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-qrd-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-4k-panel-mtp-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-4k-panel-cdp-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2-4k-panel-qrd-overlay.dtbo-base := sdm845-v2.dtb
+sdm845-v2.1-cdp-overlay.dtbo-base := sdm845-v2.1.dtb
+sdm845-v2.1-mtp-overlay.dtbo-base := sdm845-v2.1.dtb
+sdm845-v2.1-qrd-overlay.dtbo-base := sdm845-v2.1.dtb
+sdm845-v2.1-4k-panel-mtp-overlay.dtbo-base := sdm845-v2.1.dtb
+sdm845-v2.1-4k-panel-cdp-overlay.dtbo-base := sdm845-v2.1.dtb
+sdm845-v2.1-4k-panel-qrd-overlay.dtbo-base := sdm845-v2.1.dtb
+sda845-cdp-overlay.dtbo-base := sda845.dtb
+sda845-mtp-overlay.dtbo-base := sda845.dtb
+sda845-qrd-overlay.dtbo-base := sda845.dtb
+sda845-4k-panel-mtp-overlay.dtbo-base := sda845.dtb
+sda845-4k-panel-cdp-overlay.dtbo-base := sda845.dtb
+sda845-4k-panel-qrd-overlay.dtbo-base := sda845.dtb
+sda845-v2-cdp-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-mtp-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-qrd-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-hdk-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-svr-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-4k-panel-mtp-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-4k-panel-cdp-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2-4k-panel-qrd-overlay.dtbo-base := sda845-v2.dtb
+sda845-v2.1-cdp-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-mtp-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-qrd-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-svr-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-4k-panel-cdp-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-4k-panel-mtp-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-4k-panel-qrd-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-cdp-sdxpoorwills-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2.1-mtp-sdxpoorwills-overlay.dtbo-base := sda845-v2.1.dtb
+sda845-v2-mtp-sdxpoorwills-overlay.dtbo-base := sda845-v2.dtb
+
 else
 dtb-$(CONFIG_ARCH_SM8150)	+= sm8150-rumi.dtb \
 	sm8150-mtp.dtb \
