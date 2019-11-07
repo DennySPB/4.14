@@ -915,6 +915,15 @@ config QCOM_AOP_DDRSS_COMMANDS
 	help
 	  This driver allows messages to be sent to the AOP to affect the DDRSS
 	  behavior.
+
+config RF_CABLE_DETECT
+	bool "detect RF cable connection"
+	help
+	  detect RF cable connection for different RF configuration
+	  To compile this driver as a module, choose M here: the module
+	  will be called RF cable.
+	  If unsure, say N.
+
 endmenu
 
 config QCOM_HYP_CORE_CTL
