@@ -12,6 +12,7 @@ else ifeq ($(CONFIG_ONEPLUS_DIR_CAMERA),y)
 obj-$(CONFIG_SPECTRA_CAMERA) += camera_oneplus/
 else
 obj-$(CONFIG_SPECTRA_CAMERA) += camera/
+endif
 obj-$(CONFIG_MSM_AIS) += ais/
 obj-$(CONFIG_TSPP) += broadcast/
 obj-$(CONFIG_DVB_MPQ) += dvb/
